@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2016, The Android Open Source Project
+** Copyright 2013, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -34,14 +34,30 @@
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <bool name="doze_display_state_supported">true</bool>
 
+    <!-- Doze: should the pickup sensor be used as a pulse signal? -->
+    <bool name="doze_pulse_on_pick_up">false</bool>
+    
     <!-- Doze: can we assume the pickup sensor includes a proximity check? -->
     <bool name="doze_pickup_performs_proximity_check">true</bool>
 
-    <!-- Should "LTE"/"4G" be shown instead of "LTE+"/"4G+" when on NETWORK_TYPE_LTE_CA? -->
-    <bool name="config_hideLtePlus">true</bool>
+    <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
+    <string name="doze_double_tap_sensor_type" translatable="false">com.google.sensor.double_touch</string>    
 
-    <!-- The default tiles to display in QuickSettings -->
+    <!-- Doze: when to pulse after a buzzworthy notification arrives -->
+    <string name="doze_pulse_schedule" translatable="false">1s,5s,10s,30s,60s,180s</string>
+
+    <!-- Doze: check proximity sensor before pulsing from intent? -->
+    <bool name="doze_proximity_check_before_pulse_intent">true</bool>
+
+    <!-- Doze: pulse parameter - how long does it take to fade in after an intent? -->
+    <integer name="doze_pulse_duration_in_intent">0</integer>
+
+    <!-- Doze: pulse parameter - delay to wait for the screen to wake up after an intent -->
+    <integer name="doze_pulse_delay_in_intent">0</integer>
+    
+<!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_default" translatable="false">
         wifi,cell,battery,dnd,flashlight,rotation,bt,airplane,custom(com.google.android.gms/.nearby.discovery.ui.DiscoveryTileService)
-    </string>
+    </string>   
+
 </resources>

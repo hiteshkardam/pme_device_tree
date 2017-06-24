@@ -21,7 +21,7 @@ LOCAL_C_INCLUDES := frameworks/native/cmds/dumpstate
 
 LOCAL_SRC_FILES := dumpstate.cpp
 
-LOCAL_MODULE := libdumpstate.$(TARGET_DEVICE)
+LOCAL_MODULE := libdumpstate.$(TARGET_BOARD_PLATFORM)
 
 LOCAL_MODULE_TAGS := optional
 
